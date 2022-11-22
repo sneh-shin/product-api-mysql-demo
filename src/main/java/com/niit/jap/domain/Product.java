@@ -5,5 +5,15 @@
  */
 package com.niit.jap.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
+
+    @Id
+    int productId;
+    String productName;
+    String productDescription;
+    int amountInStock;
 }
