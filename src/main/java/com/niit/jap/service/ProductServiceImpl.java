@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -24,21 +25,22 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product saveData(Product product) {
-        return null;
+        return productRepository.save(product);
     }
 
     @Override
     public List<Product> getAll() {
-        return null;
+        return productRepository.findAll();
     }
 
     @Override
-    public Product getById(int id) {
-        return null;
+    public Optional<Product> fetchById(int id) {
+        return productRepository.findById(id);
     }
 
     @Override
     public String deleteById(int id) {
-        return null;
+        productRepository.deleteById(id);
+        return "Item is deleted";
     }
 }
